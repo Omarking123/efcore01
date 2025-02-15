@@ -22,29 +22,39 @@ namespace efcore01.Entities
 
     //[Table("Hamda" , Schema ="dbo")]
 
-    class Empoylee
+    //class Empoylee
+    //{
+    //    [Key]
+    //    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    //    public int Id { get; set; }
+
+    //    [Required]
+    //    [Column("EmpName",TypeName ="varchar")]
+    //    [MaxLength (50)]
+
+    //    [StringLength(50 , MinimumLength =10)]
+    //    public string? Name { get; set; }
+
+    //    [Range (20,60)]
+    //    public  int? Age { get; set; }
+    //    [EmailAddress]
+    //    public string Email { get; set; }
+    //    [Phone]
+
+    //    [DataType(DataType.PhoneNumber)]
+    //    public string Phone { get; set; }
+
+    //    public string Password { get; set; }
+
+    //}
+    class Employee
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
-
-        [Required]
-        [Column("EmpName",TypeName ="varchar")]
-        [MaxLength (50)]
-
-        [StringLength(50 , MinimumLength =10)]
-        public string? Name { get; set; }
-
-        [Range (20,60)]
-        public  int? Age { get; set; }
-        [EmailAddress]
+        public int Empid { get; set; }
+        public string Name { get; set; }
+        public int? Age { get; set; }
         public string Email { get; set; }
-        [Phone]
+        public decimal Salary { get; set; }
 
-        [DataType(DataType.PhoneNumber)]
-        public string Phone { get; set; }
-
-        public string Password { get; set; }
-
+        public DateTime DateOfCreation { get; set; }
     }
 }

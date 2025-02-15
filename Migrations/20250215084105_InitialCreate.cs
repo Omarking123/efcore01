@@ -29,15 +29,17 @@ namespace efcore01.Migrations
                 name: "Empoylee",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false),
-                    EmpName = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Empid = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EmployeeName = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Age = table.Column<int>(type: "int", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Salary = table.Column<decimal>(type: "money", nullable: false),
+                    DateOfCreation = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2025, 2, 15, 11, 41, 4, 880, DateTimeKind.Local).AddTicks(4214))
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Empoylee", x => x.Id);
+                    table.PrimaryKey("PK_Empoylee", x => x.Empid);
                 });
         }
 

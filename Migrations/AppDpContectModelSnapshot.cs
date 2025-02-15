@@ -42,13 +42,21 @@ namespace efcore01.Migrations
                     b.ToTable("Department");
                 });
 
-            modelBuilder.Entity("efcore01.Entities.Empoylee", b =>
+            modelBuilder.Entity("efcore01.Entities.Employee", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Empid")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Empid"));
 
                     b.Property<int?>("Age")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("DateOfCreation")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2025, 2, 15, 11, 41, 4, 880, DateTimeKind.Local).AddTicks(4214));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -58,17 +66,12 @@ namespace efcore01.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar")
-                        .HasColumnName("EmpName");
+                        .HasColumnName("EmployeeName");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("Salary")
+                        .HasColumnType("money");
 
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
+                    b.HasKey("Empid");
 
                     b.ToTable("Empoylee");
                 });
