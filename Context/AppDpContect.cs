@@ -5,7 +5,7 @@ using Microsoft.VisualBasic;
 
 namespace efcore01.Context
 {
-    internal class AppDpContect:DbContext
+    internal class AppDpContect : DbContext
     {
         protected override void OnModelCreating(ModelBuilder modelBuilder)
 
