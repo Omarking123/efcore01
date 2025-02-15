@@ -20,7 +20,7 @@ namespace efcore01.Entities
     //        //public DateTime DateOfCreation { get; set; }
     //    }
 
-    [Table("Hamda" , Schema ="dbo")]
+    //[Table("Hamda" , Schema ="dbo")]
 
     class Empoylee
     {
@@ -43,6 +43,8 @@ namespace efcore01.Entities
 
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
+
+        public string Password { get; set; }
 
     }
 }

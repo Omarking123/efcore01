@@ -7,7 +7,7 @@ namespace efcore01.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server =.; Database = Appg3 ; Trusted_Connection = True ");
+            optionsBuilder.UseSqlServer("Server =.; Database = Appg3 ; Trusted_Connection = True ; TrustServerCertificate = True");
         }
         public DbSet <Empoylee> Empoylee { get; set; }
         public DbSet <Department> Department { get; set; }

@@ -1,4 +1,5 @@
 ﻿using efcore01.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace efcore01
 {
@@ -6,7 +7,11 @@ namespace efcore01
     {
         static void Main(string[] args)
         {
-            AppDpContect context = new AppDpContect();
+            //AppDpContect context = new AppDpContect();
+
+            //context.Empoylee.Where(e => e.Id == 0);
+
+            //context.Database.Migrate();
         }
     }
 }
