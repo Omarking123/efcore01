@@ -17,7 +17,8 @@ namespace efcore01.Context
 
 
 
-             
+
+            #region ..
             //modelBuilder.Entity<Employee>().HasKey("Empid");
             //modelBuilder.Entity<Employee>().HasKey(nameof(Employee.Empid));
             //modelBuilder.Entity<Employee>().HasKey(e=>e.Empid);
@@ -49,6 +50,7 @@ namespace efcore01.Context
             //    E.Property(e => e.DateOfCreation).HasDefaultValue(DateTime.Now);
             //});
 
+            #endregion
 
 
         }
